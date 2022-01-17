@@ -17,9 +17,10 @@
         exit ();
     }
 
-    $mysql = new mysqli('DS','localhost','131331Dimka131331','register_bd');
-    $mysql->query("INSERT INTO `users`(`login`, `pass`, `name`)
-    VALUE('$login', '$pass, '$name')");
+
+    $mysql = new mysqli('127.0.0.1','root','','register-bd');
+    $mysql->query("INSERT INTO `users` (`login`, `pass`, `name`)
+    VALUES('$login', '$pass', '$name')");
 
     $mysql->close();
 ?>
