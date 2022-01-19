@@ -17,10 +17,15 @@
         exit ();
     }
 
+    $pass = md5($pass."qazwsxedc987123");
 
     $mysql = new mysqli('127.0.0.1','root','','register-bd');
     $mysql->query("INSERT INTO `users` (`login`, `pass`, `name`)
     VALUES('$login', '$pass', '$name')");
 
     $mysql->close();
+
+    header('Location: /');
+
+
 ?>
